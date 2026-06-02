@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://swurly.com/sitemap.xml
+Sitemap: https://swurlystudios.com/sitemap.xml

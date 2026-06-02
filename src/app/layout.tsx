@@ -26,11 +26,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Swurly Studios",
   description: "We build empires in the Minecraft ecosystem.",
-  metadataBase: new URL('https://swurly.com'),
+  metadataBase: new URL('https://swurlystudios.com'),
   openGraph: {
     title: "Swurly Studios",
     description: "We build empires in the Minecraft ecosystem.",
-    url: 'https://swurly.com',
+    url: 'https://swurlystudios.com',
     siteName: 'Swurly Studios',
     locale: 'en_US',
     type: 'website',
