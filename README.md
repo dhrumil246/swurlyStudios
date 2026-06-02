@@ -1,49 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Swurly Studios
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?logo=framer)
+![GSAP](https://img.shields.io/badge/GSAP-green?logo=greensock)
 
-First, run the development server:
+**Swurly Studios** is a premium, brutalist-styled landing page built for the Minecraft server ecosystem. We help creators and brands grow through striking visual content and robust development.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Brutalist UI:** A sharp, dark-mode-first aesthetic with high-contrast typography, pixelated noise textures, and smooth animations.
+- **High Performance:** Statically generated (SSG) with Next.js App Router. Heavy 3D components (`three.js`) are lazy-loaded dynamically to ensure sub-second initial paint times.
+- **Smooth Scrolling:** Integrated with Lenis for buttery-smooth scrolling physics.
+- **Discord Integration:** A built-in contact form backed by Zod schema validation that fires directly to a secure Discord Webhook via Next.js API routes.
+- **Analytics Ready:** Pre-configured with both **Vercel Web Analytics** (zero-config) and **PostHog** (advanced user tracking).
+- **SEO & Security:** Fully loaded with OpenGraph tags, Twitter Cards, `robots.txt`, `sitemap.xml`, and strict HTTP security headers via `vercel.json`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Getting Started (Local Development)
 
-## Learn More
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/swurly.git
+   cd swurly
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Set up Environment Variables**
+   Copy the example environment file and fill in your keys:
+   ```bash
+   cp .env.example .env.local
+   ```
+   *Note: You will need a Discord Webhook URL for the contact form to function locally.*
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌍 Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `DISCORD_WEBHOOK_URL` | The secure Discord webhook URL where contact form submissions will be sent. | **Yes** |
+| `NEXT_PUBLIC_POSTHOG_KEY` | Your PostHog Project API Key for advanced analytics. | No |
+| `NEXT_PUBLIC_POSTHOG_HOST` | PostHog host URL (Defaults to `https://app.posthog.com`). | No |
 
-## Deployment
+---
 
-This project is configured for deployment on Vercel.
+## ☁️ Deployment (Vercel)
 
-1. Fork or clone the repository.
-2. Create a new project in the Vercel dashboard and point it to your repository.
-3. In the **Environment Variables** section, add the following keys (see `.env.example`):
-   - `DISCORD_WEBHOOK_URL`
-   - `NEXT_PUBLIC_POSTHOG_KEY` (Optional)
-4. Deploy!
+This project is meticulously configured for a seamless deployment on [Vercel](https://vercel.com).
 
-The `vercel.json` automatically configures security headers.
+1. Push your code to a GitHub repository.
+2. Log into the Vercel dashboard and click **Add New Project**.
+3. Import your Swurly Studios repository.
+4. In the **Environment Variables** section, add your `DISCORD_WEBHOOK_URL` (and PostHog key if utilizing it).
+5. Click **Deploy**.
+
+**Security Note:** The included `vercel.json` file will automatically instruct Vercel's Edge Network to inject strict HTTP security headers (HSTS, X-Frame-Options DENY, X-Content-Type-Options nosniff) on every request, protecting your site out of the box.
+
+---
+*Built with precision for Swurly Studios.*
