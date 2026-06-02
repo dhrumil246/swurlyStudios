@@ -248,7 +248,7 @@ export const LogoLoop = memo(
             height={item.height || 40}
             alt={item.alt ?? ''}
             title={item.title}
-            style={{ width: 'auto', height: '100%', objectFit: 'contain' }}
+            style={{ width: 'auto', height: 'var(--logoloop-logoHeight)', objectFit: 'contain' }}
             draggable={false}
           />
         );

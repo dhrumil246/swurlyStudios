@@ -28,7 +28,7 @@ export default function TrustedBy() {
           Servers we've built for
         </p>
       </div>
-      <div style={{ height: '80px', overflow: 'hidden' }}>
+      <div style={{ height: '80px', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
         <LogoLoopComponent
           logos={serverLogos}
           speed={40}
