@@ -477,7 +477,7 @@ const MagicBento = ({
             <>
               {card.image && (
                 <div className="magic-bento-card__bg">
-                  <Image src={card.image} alt={card.title} fill style={{ objectFit: 'cover' }} className="bento-image" />
+                  <Image src={card.image} alt={card.title} fill style={{ objectFit: 'contain', padding: '1.5rem' }} className="bento-image" />
                 </div>
               )}
               <div className="magic-bento-card__header">
