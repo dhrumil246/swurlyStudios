@@ -91,7 +91,7 @@ const PortfolioItem = ({ data }: { data: any }) => {
                 playsInline 
               />
             ) : (
-              <Image src={img} alt={`${data.title} preview ${i+1}`} fill style={{ objectFit: 'cover' }} />
+              <Image src={img} alt={`${data.title} preview ${i+1}`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
             )}
           </div>
         ))}
