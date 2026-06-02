@@ -1,26 +1,77 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-color: #050301;
+  --bg-gradient-start: #1a0f0a;
+  --bg-gradient-end: #050301;
+  --bg-card: #0a0a0a;
+  --bg-card-hover: #111;
+  --text-primary: #f5f0e6;
+  --text-secondary: #a69b8d;
+  --accent: #d4af37;
+  --accent-glow: rgba(212, 175, 55, 0.4);
+  --border-color: #222;
+  --border-hover: #333;
+  --font-heading: var(--font-malven), sans-serif;
+  --font-body: var(--font-space-grotesk), sans-serif;
+  --header-height: 80px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html, body {
+  background: radial-gradient(circle at top right, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  background-attachment: fixed;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+}
+
+h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .cta-title {
+  font-family: var(--font-heading);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Base utility classes for layout */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }

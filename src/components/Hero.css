@@ -1,0 +1,147 @@
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--bg-color);
+}
+
+.hero-media-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* Add a subtle entrance fade for the rings */
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}
+
+.hero-content.brutalist-layout {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.brutalist-bg-text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-size: 25vw;
+  line-height: 0.8;
+  color: rgba(255, 255, 255, 0.03); /* Slight solid fill */
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.6); /* Much brighter outline */
+  z-index: 1;
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: -0.04em;
+}
+
+.brutalist-fg-layer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 15vh; /* Push down to overlap bottom half of SWURLY */
+}
+
+.brutalist-subtext {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 8vw, 10rem);
+  line-height: 1;
+  color: var(--white);
+  text-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  letter-spacing: -0.02em;
+}
+
+.hero-title-word {
+  display: inline-block;
+  transform: translateY(120%) rotate(5deg);
+  opacity: 0;
+  transform-origin: left bottom;
+  animation: wordReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.word-1 { animation-delay: 1.2s; }
+.word-2 { animation-delay: 1.4s; }
+
+@keyframes wordReveal {
+  0% {
+    transform: translateY(120%) rotate(5deg);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media-wrapper {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    animation: none;
+  }
+  .hero-video {
+    transform: scale(1);
+    animation: none;
+  }
+  .hero-title-word {
+    animation: none;
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.hero-tagline {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
+  color: #d4af37;
+  font-weight: 500;
+  text-align: center;
+  max-width: 600px;
+  background: var(--bg-card);
+  padding: 1.5rem 3rem;
+  border-radius: 100px;
+  border: 1px solid var(--accent);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.9);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,60 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 4vw;
+  background: transparent;
+  border-bottom: none;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.shield-logo {
+  width: 33px;
+  height: 43px;
+  transition: transform 0.3s ease;
+}
+
+.logo-link:hover .shield-logo {
+  transform: scale(1.05);
+}
+
+.main-nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  font-family: var(--font-heading);
+  font-size: 1.2rem; /* Increased slightly since Malven is a display serif */
+  font-weight: 500;
+  color: var(--text-primary);
+  position: relative;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  color: #d4af37; /* Bronze accent */
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none; /* Hide on mobile for now */
+  }
+}

@@ -1,0 +1,166 @@
+.cta-section {
+  position: relative;
+  width: 100vw;
+  padding: 10rem 0;
+  background-color: transparent;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, transparent 20%, var(--bg-color) 80%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cta-header {
+  margin-bottom: 4rem;
+}
+
+.cta-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* BENTO GRID */
+.cta-bento-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .cta-bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bento-card {
+  background: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 24px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-card:hover {
+  border-color: #333;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.bento-card-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+/* Side Column Structure */
+.bento-side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Interactive Cards (Discord/Email) */
+.discord-card, .email-card {
+  text-decoration: none;
+  padding: 2.5rem;
+  flex: 1; /* Split height equally */
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.discord-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(88, 101, 242, 0.5);
+  background: rgba(88, 101, 242, 0.05);
+}
+
+.email-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.bento-icon {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.discord-icon {
+  color: #5865F2;
+}
+
+.email-icon {
+  color: #d4af37;
+}
+
+.discord-card:hover .bento-icon,
+.email-card:hover .bento-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.discord-card .bento-card-title,
+.email-card .bento-card-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.bento-card-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Background Glows */
+.discord-glow, .email-glow {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.discord-glow {
+  background: #5865F2;
+}
+
+.email-glow {
+  background: #d4af37;
+}
+
+.discord-card:hover .discord-glow,
+.email-card:hover .email-glow {
+  opacity: 0.4;
+}
+
+.bento-card-content, .bento-icon, .main-contact-card > * {
+  position: relative;
+  z-index: 2;
+}
