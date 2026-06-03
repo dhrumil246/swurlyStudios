@@ -25,20 +25,33 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Swurly Studios",
-  description: "We build empires in the Minecraft ecosystem.",
+  description: "Swurly is a performance-driven gaming studio engineering immersive Minecraft networks and content frameworks that generate millions of views, highly engaged communities, and predictable growth.",
   metadataBase: new URL('https://swurlystudios.com'),
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     title: "Swurly Studios",
-    description: "We build empires in the Minecraft ecosystem.",
+    description: "Swurly is a performance-driven gaming studio engineering immersive Minecraft networks and content frameworks that generate millions of views, highly engaged communities, and predictable growth.",
     url: 'https://swurlystudios.com',
     siteName: 'Swurly Studios',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/banner.png',
+        width: 1200,
+        height: 630,
+        alt: 'Swurly Studios - Performance-Driven Gaming Studio',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Swurly Studios",
-    description: "We build empires in the Minecraft ecosystem.",
+    description: "Swurly is a performance-driven gaming studio engineering immersive Minecraft networks and content frameworks that generate millions of views, highly engaged communities, and predictable growth.",
+    images: ['/banner.png'],
   },
 };
 
