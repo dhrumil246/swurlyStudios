@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, useInView } from 'motion/react';
 import Image from 'next/image';
 import './Portfolio.css';
 
-const CDN_URL = 'https://pub-4b80a924369f4077b5514dd6bb128290.r2.dev';
+const CDN_URL = process.env.NEXT_PUBLIC_CDN_URL || '';
 
 const portfolioData = [
   {
@@ -54,23 +54,31 @@ const portfolioData = [
 
 const VideoPlayer = ({ src, isInView }: { src: string, isInView: boolean }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [hasLoaded, setHasLoaded] = React.useState(false);
 
-  useEffect(() => {
-    if (!videoRef.current) return;
+  React.useEffect(() => {
+    if (isInView && !hasLoaded) {
+      setHasLoaded(true);
+    }
+  }, [isInView, hasLoaded]);
+
+  React.useEffect(() => {
+    if (!videoRef.current || !hasLoaded) return;
     if (isInView) {
       videoRef.current.play().catch(() => {});
     } else {
       videoRef.current.pause();
     }
-  }, [isInView]);
+  }, [isInView, hasLoaded]);
 
   return (
     <video 
       ref={videoRef}
-      src={src} 
+      src={hasLoaded ? src : undefined} 
       loop 
       muted 
-      playsInline 
+      playsInline
+      preload="none" 
     />
   );
 };
@@ -103,19 +111,19 @@ const PortfolioItem = ({ data }: { data: any }) => {
   const CollageContent = () => (
     <motion.div 
       className="portfolio-collage-wrapper"
-      style={{ y }}
+      style={{ y, rotate }}
     >
-      <motion.div className="portfolio-collage" style={{ rotate }}>
+      <div className="portfolio-collage">
         {data.images.map((img: string, i: number) => (
           <div key={img} className={`collage-img-container img-${i} item-${data.id}-${i}`}>
             {img.endsWith('.mp4') ? (
               <VideoPlayer src={img} isInView={isInView} />
             ) : (
-              <Image src={img} alt={`${data.title} preview ${i+1}`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
+              <Image src={img} alt={`${data.title} preview ${i+1}`} fill unoptimized sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
             )}
           </div>
         ))}
-      </motion.div>
+      </div>
     </motion.div>
   );
 

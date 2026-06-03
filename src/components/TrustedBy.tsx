@@ -2,7 +2,7 @@
 import React from 'react';
 import LogoLoop from './LogoLoop';
 
-const CDN_URL = 'https://pub-4b80a924369f4077b5514dd6bb128290.r2.dev';
+const CDN_URL = process.env.NEXT_PUBLIC_CDN_URL || '';
 
 const serverLogos = [
   { src: `${CDN_URL}/web assets/server logo/fadecloud.webp`, alt: "FadeCloud", href: "#" },
