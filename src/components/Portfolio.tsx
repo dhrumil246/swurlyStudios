@@ -5,6 +5,8 @@ import { motion, useScroll, useTransform, useInView } from 'motion/react';
 import Image from 'next/image';
 import './Portfolio.css';
 
+const CDN_URL = 'https://pub-4b80a924369f4077b5514dd6bb128290.r2.dev';
+
 const portfolioData = [
   {
     id: 'theminecart',
@@ -13,10 +15,10 @@ const portfolioData = [
     views: '7M+',
     conversions: '50K+',
     images: [
-      '/web assets/earthsmp/earthsmp1.webp',
-      '/web assets/earthsmp/esvideo1.mp4',
-      '/web assets/earthsmp/esvideo2.mp4',
-      '/web assets/earthsmp/earthsmp2.webp'
+      `${CDN_URL}/web assets/earthsmp/earthsmp1.webp`,
+      `${CDN_URL}/web assets/earthsmp/esvideo1.mp4`,
+      `${CDN_URL}/web assets/earthsmp/esvideo2.mp4`,
+      `${CDN_URL}/web assets/earthsmp/earthsmp2.webp`
     ],
     align: 'left' // Image left, Text right
   },
@@ -27,10 +29,10 @@ const portfolioData = [
     views: '1M+',
     conversions: '15K+',
     images: [
-      '/web assets/boxmc/boxmc1.png',
-      '/web assets/boxmc/bmvid1.mp4',
-      '/web assets/boxmc/bmvid2.mp4',
-      '/web assets/boxmc/boxmc2.png'
+      `${CDN_URL}/web assets/boxmc/boxmc1.png`,
+      `${CDN_URL}/web assets/boxmc/bmvid1.mp4`,
+      `${CDN_URL}/web assets/boxmc/bmvid2.mp4`,
+      `${CDN_URL}/web assets/boxmc/boxmc2.png`
     ],
     align: 'right' // Text left, Image right
   },
@@ -41,10 +43,10 @@ const portfolioData = [
     views: '500K+',
     conversions: '20K+',
     images: [
-      '/web assets/nitromc/nitromc1.png',
-      '/web assets/nitromc/nmvid1.mp4',
-      '/web assets/nitromc/nmvid2.mp4',
-      '/web assets/nitromc/nitromc2.png'
+      `${CDN_URL}/web assets/nitromc/nitromc1.png`,
+      `${CDN_URL}/web assets/nitromc/nmvid1.mp4`,
+      `${CDN_URL}/web assets/nitromc/nmvid2.mp4`,
+      `${CDN_URL}/web assets/nitromc/nitromc2.png`
     ],
     align: 'left'
   }

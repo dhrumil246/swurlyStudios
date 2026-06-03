@@ -4,34 +4,36 @@ import React from 'react';
 import MagicBento from './MagicBento';
 import './Showcase.css';
 
+const CDN_URL = 'https://pub-4b80a924369f4077b5514dd6bb128290.r2.dev';
+
 const testimonials = [
   {
     id: 1,
     title: '500k+ Views & 1,000+ Joins',
     description: 'Massive player influx through short-form content.',
     label: 'Short-Form Growth',
-    image: '/web assets/reviews/Screenshot 2026-05-29 125237.png'
+    image: `${CDN_URL}/web assets/reviews/Screenshot 2026-05-29 125237.png`
   },
   {
     id: 2,
     title: 'Premium Editing',
     description: 'Consistent high-quality content delivery.',
     label: 'Video Production',
-    image: '/web assets/reviews/Screenshot 2026-05-29 125326.png'
+    image: `${CDN_URL}/web assets/reviews/Screenshot 2026-05-29 125326.png`
   },
   {
     id: 3,
     title: 'Highly Recommended',
     description: 'Professional and reasonable service.',
     label: 'Client Review',
-    image: '/web assets/reviews/Screenshot 2026-05-29 125340.png'
+    image: `${CDN_URL}/web assets/reviews/Screenshot 2026-05-29 125340.png`
   },
   {
     id: 4,
     title: 'Server Growth',
     description: 'Driving real player acquisition through content.',
     label: 'Player Acquisition',
-    image: '/web assets/reviews/Screenshot 2026-05-29 125354.png'
+    image: `${CDN_URL}/web assets/reviews/Screenshot 2026-05-29 125354.png`
   }
 ];
 

@@ -2,20 +2,22 @@
 import React from 'react';
 import LogoLoop from './LogoLoop';
 
+const CDN_URL = 'https://pub-4b80a924369f4077b5514dd6bb128290.r2.dev';
+
 const serverLogos = [
-  { src: "/web assets/server logo/fadecloud.webp", alt: "FadeCloud", href: "#" },
-  { src: "/web assets/server logo/vale.webp", alt: "Vale", href: "#" },
-  { src: "/web assets/server logo/talon.webp", alt: "Talon", href: "#" },
-  { src: "/web assets/server logo/snailcraft.webp", alt: "Snailcraft", href: "#" },
-  { src: "/web assets/server logo/frootly.webp", alt: "Frootly", href: "#" },
-  { src: "/web assets/server logo/fruitblockicon.webp", alt: "Fruitblock", href: "#" },
-  { src: "/web assets/server logo/crystalchaos.webp", alt: "Crystal Chaos", href: "#" },
-  { src: "/web assets/server logo/nitro.webp", alt: "Nitro", href: "#" },
-  { src: "/web assets/server logo/blitz.webp", alt: "Blitz", href: "#" },
-  { src: "/web assets/server logo/box.webp", alt: "Box", href: "#" },
-  { src: "/web assets/server logo/banana.webp", alt: "Banana", href: "#" },
-  { src: "/web assets/server logo/minepiece.webp", alt: "Minepiece", href: "#" },
-  { src: "/web assets/server logo/hap.webp", alt: "Hap", href: "#" },
+  { src: `${CDN_URL}/web assets/server logo/fadecloud.webp`, alt: "FadeCloud", href: "#" },
+  { src: `${CDN_URL}/web assets/server logo/vale.webp`, alt: "Vale", href: "#" },
+  { src: `${CDN_URL}/web assets/server logo/talon.webp`, alt: "Talon", href: "#" },
+  { src: `${CDN_URL}/web assets/server logo/snailcraft.webp`, alt: "Snailcraft", href: "#" },
+  { src: `${CDN_URL}/web assets/server logo/frootly.webp`, alt: "Frootly", href: "#" },
+  { src: `${CDN_URL}/web assets/server logo/fruitblockicon.webp`, alt: "Fruitblock", href: "#" },
+  { src: `${CDN_URL}/web assets/server logo/crystalchaos.webp`, alt: "Crystal Chaos", href: "#" },
+  { src: `${CDN_URL}/web assets/server logo/nitro.webp`, alt: "Nitro", href: "#" },
+  { src: `${CDN_URL}/web assets/server logo/blitz.webp`, alt: "Blitz", href: "#" },
+  { src: `${CDN_URL}/web assets/server logo/box.webp`, alt: "Box", href: "#" },
+  { src: `${CDN_URL}/web assets/server logo/banana.webp`, alt: "Banana", href: "#" },
+  { src: `${CDN_URL}/web assets/server logo/minepiece.webp`, alt: "Minepiece", href: "#" },
+  { src: `${CDN_URL}/web assets/server logo/hap.webp`, alt: "Hap", href: "#" },
 ];
 
 const LogoLoopComponent = LogoLoop as any;
