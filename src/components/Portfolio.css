@@ -98,6 +98,7 @@
   max-width: 450px;
   background: white;
   padding: 1rem;
+  will-change: transform;
   box-shadow: 0 20px 50px rgba(0,0,0,0.5);
   /* Rotate slightly as requested by reference */
   transform: rotate(-3deg);

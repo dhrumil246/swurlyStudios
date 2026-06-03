@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import React, { useRef, useEffect } from 'react';
+import { motion, useScroll, useTransform, useInView } from 'motion/react';
 import Image from 'next/image';
 import './Portfolio.css';
 
@@ -50,8 +50,32 @@ const portfolioData = [
   }
 ];
 
+const VideoPlayer = ({ src, isInView }: { src: string, isInView: boolean }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    if (isInView) {
+      videoRef.current.play().catch(() => {});
+    } else {
+      videoRef.current.pause();
+    }
+  }, [isInView]);
+
+  return (
+    <video 
+      ref={videoRef}
+      src={src} 
+      loop 
+      muted 
+      playsInline 
+    />
+  );
+};
+
 const PortfolioItem = ({ data }: { data: any }) => {
   const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { margin: "200px 0px" });
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
@@ -83,13 +107,7 @@ const PortfolioItem = ({ data }: { data: any }) => {
         {data.images.map((img: string, i: number) => (
           <div key={img} className={`collage-img-container img-${i} item-${data.id}-${i}`}>
             {img.endsWith('.mp4') ? (
-              <video 
-                src={img} 
-                autoPlay 
-                loop 
-                muted 
-                playsInline 
-              />
+              <VideoPlayer src={img} isInView={isInView} />
             ) : (
               <Image src={img} alt={`${data.title} preview ${i+1}`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
             )}
